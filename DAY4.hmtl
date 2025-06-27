@@ -1,0 +1,29 @@
+// LOCAL ST0RAGE
+// LOGIN FORM
+
+// signup.js
+function signup() {
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+  users.push({ user, pass });
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Signup successful!");
+}
+
+// login.js
+function login() {
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+  const found = users.find(u => u.user === user && u.pass === pass);
+
+  if (found) {
+    alert("Login success!");
+  } else {
+    alert("Login failed.");
+  }
+}
