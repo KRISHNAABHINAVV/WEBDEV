@@ -1,0 +1,25 @@
+<button onclick="sayHi()">Click Me</button>
+<script>
+  function sayHi() {
+    alert("Hi there!");
+  }
+</script>
+
+document.getElementById("btn").addEventListener("click", function() {
+  alert("Clicked!");
+});
+
+// calculator
+
+
+function calculate(op) {
+  let a = parseFloat(document.getElementById("num1").value);
+  let b = parseFloat(document.getElementById("num2").value);
+  let result;
+  if (op === "+") result = a + b;
+  if (op === "-") result = a - b;
+  if (op === "*") result = a * b;
+  if (op === "/") result = a / b;
+  document.getElementById("output").innerText = "Result: " + result;
+}
+
